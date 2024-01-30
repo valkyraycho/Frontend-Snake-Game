@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script type="module" src="index.js" defer></script>
+        <title>Snake</title>
+    </head>
+    <body>
+        <div class="scoreboard" id="scoreboard">
+            <p>Snake Game</p>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+        <div id="game_board"></div>
+        <div id="game_over_overlay">
+            <div id="message_content">You lose!</div>
+            <p class="final_score">Score: <span id="final_score">0</span></p>
+            <button id="restart_button">Press to Restart</button>
+        </div>
+    </body>
+</html>
