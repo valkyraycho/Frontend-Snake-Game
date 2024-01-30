@@ -75,3 +75,24 @@ export const updatePrey = (gameOver) => {
     // ...
 };
 ```
+
+### Eating Prey
+In the Snake game implementation, the prey is considered "eaten" when the head of the snake overlaps with the position of the prey on the game board. This is checked in the `updatePrey()` function:
+```
+export const updatePrey = (gameOver) => {
+    if (overlapsSnake(prey)) {
+        // Snake captures the prey
+        growSnake();
+        prey = getRandomPreyPosition();
+        updateScore();
+    } else if (gameOver) {
+        // Generate a new prey for the next game
+        prey = getRandomPreyPosition();
+    }
+};
+```
+The `overlapsSnake()` function is used to check whether the position of the prey overlaps with any part of the snake's body. If an overlap is detected, the `growSnake()` function is called to increase the length of the snake, and a new position for the prey is generated using `getRandomPreyPosition()`.
+
+# Summary
+The Snake game is implemented using HTML, CSS, and JavaScript, employing the CSS Grid layout for the game board. The game utilizes the `window.requestAnimationFrame()` function to create a smooth animation loop, updating the snake's movement and checking for collisions with the prey or itself. The snake's direction is controlled by arrow key inputs, and the prey is randomly positioned on the grid. When the snake captures the prey, it grows in length, and the score is incremented. Gameover conditions include the snake hitting the game board's borders or colliding with itself. The game features a responsive design, restart functionality, and a visually appealing layout with a scoreboard and game-over overlay.
+
